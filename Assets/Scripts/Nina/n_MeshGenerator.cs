@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
-public class MeshGenerator : MonoBehaviour
+public class n_MeshGenerator : MonoBehaviour
 {
     [SerializeField] private Vector3[] vertices;
     [SerializeField] private Vector2[] uvs;
@@ -29,8 +29,6 @@ public class MeshGenerator : MonoBehaviour
     {
         meshFunction = meshFunctions[meshFunctionsIndex];
         meshName = meshFunction.Name;
-        Debug.Log(meshFunctionsIndex); 
-        Debug.Log(gameObject);
         if (meshFunctionsIndex + 1 < meshFunctions.Count) meshFunctionsIndex++;
 
         generatedMesh = new Mesh();
