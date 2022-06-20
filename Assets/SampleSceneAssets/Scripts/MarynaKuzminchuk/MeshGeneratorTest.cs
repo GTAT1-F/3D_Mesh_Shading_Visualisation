@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(MeshFilter))]
-public class MeshGenerator : MonoBehaviour
+public class MeshGeneratorTest : MonoBehaviour
 {
     Mesh mesh;
     Vector3[] verticies;
@@ -22,27 +22,6 @@ public class MeshGenerator : MonoBehaviour
     }
     void CreateShape()
     {
-        // verticies = new Vector3[]
-        // {
-        //     new Vector3 (0,0,0),
-        //     new Vector3 (0,0,1),
-        //     new Vector3 (1,0,0),
-        //     new Vector3 (1,0,1)
-        // };
-
-        // uv = new Vector3[] 
-        // {
-        // new Vector3(0, 0),
-        // new Vector3(0, 1),
-        // new Vector3(1, 1)
-        // };
-
-        // triangles = new int[]
-        // {
-        //     0,1,2,
-        //     1,3,2
-        // };
-
         verticies = new Vector3[(xSize + 1) * (zSize + 1)];
         int i = 0;
 
