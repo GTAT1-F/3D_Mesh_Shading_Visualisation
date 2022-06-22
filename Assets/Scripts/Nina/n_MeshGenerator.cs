@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
+[RequireComponent(typeof(MeshFilter),   typeof(MeshRenderer))]
 public class n_MeshGenerator : MonoBehaviour
 {
     [SerializeField] private Vector3[] vertices;
@@ -61,8 +61,8 @@ public class n_MeshGenerator : MonoBehaviour
             }
         }
 
-        triangles = new int[subdivisions.x * subdivisions.y * 6];
-
+        triangles = new int[subdivisions.x * subdivisions.y * 6];      
+       
         for (var i = 0; i < subdivisions.x * subdivisions.y; i++)
         {
             var triangleIndex = (i % subdivisions.x) + (i / subdivisions.x) * vertexSize.x;
