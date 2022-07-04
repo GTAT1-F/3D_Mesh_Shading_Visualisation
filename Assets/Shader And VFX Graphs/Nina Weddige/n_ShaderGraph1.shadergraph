@@ -168,12 +168,6 @@
     "m_StickyNoteDatas": [
         {
             "m_Id": "3db63e314ed440618765763b57b1172d"
-        },
-        {
-            "m_Id": "e4154cba6c794edf81954ca0cda416d9"
-        },
-        {
-            "m_Id": "6172f4c386f042a0918e7e9b5ee1e08c"
         }
     ],
     "m_Edges": [
@@ -2800,26 +2794,6 @@
     "m_PreviewMode": 0,
     "m_CustomColors": {
         "m_SerializableColors": []
-    }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
-    "m_ObjectId": "6172f4c386f042a0918e7e9b5ee1e08c",
-    "m_Title": "",
-    "m_Content": "Arccos is between 0 and 2 PI",
-    "m_TextSize": 0,
-    "m_Theme": 0,
-    "m_Position": {
-        "serializedVersion": "2",
-        "x": -2084.525146484375,
-        "y": -554.184326171875,
-        "width": 200.0,
-        "height": 100.0
-    },
-    "m_Group": {
-        "m_Id": ""
     }
 }
 
@@ -5551,26 +5525,6 @@
         "y": 0.0,
         "z": 0.0,
         "w": 0.0
-    }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
-    "m_ObjectId": "e4154cba6c794edf81954ca0cda416d9",
-    "m_Title": "",
-    "m_Content": "Dot product with (1, 0) is in rang e [-1, 1]",
-    "m_TextSize": 0,
-    "m_Theme": 0,
-    "m_Position": {
-        "serializedVersion": "2",
-        "x": -2397.525146484375,
-        "y": -572.184326171875,
-        "width": 200.0,
-        "height": 100.0
-    },
-    "m_Group": {
-        "m_Id": ""
     }
 }
 
