@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[RequireComponent(typeof(MeshFilter),   typeof(MeshRenderer))]
+[RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
 public class n_MeshGenerator : MonoBehaviour
 {
     [SerializeField] private Vector3[] vertices;
@@ -20,10 +20,10 @@ public class n_MeshGenerator : MonoBehaviour
     private void Awake()
     {
         meshFunctions = new List<IMeshFunction>();
-        meshFunctions.Add(new MeshFunctions.TorusMeshFunction());
+        meshFunctions.Add(new MeshFunctions.BoySurfaceMeshFunction());
         meshFunctions.Add(new MeshFunctions.SineSurfaceMeshFunction());
         meshFunctions.Add(new MeshFunctions.MeshFunction());
-        //meshFunctions.Add(new MeshFunctions.SphereFunction());
+        meshFunctions.Add(new MeshFunctions.TorusMeshFunction());
     }
     private void OnEnable()
     {
@@ -84,8 +84,17 @@ public class n_MeshGenerator : MonoBehaviour
         generatedMesh.RecalculateBounds();
         generatedMesh.RecalculateNormals();
         generatedMesh.RecalculateTangents();
-
         GetComponent<MeshFilter>().mesh = generatedMesh;
+
+        if (meshFunction.Name != "Mesh")
+        {
+            var meshCollider = gameObject.AddComponent<MeshCollider>();
+            meshCollider.sharedMesh = generatedMesh;
+            meshCollider.convex = true;
+            var rb = gameObject.AddComponent<Rigidbody>();
+            rb.isKinematic = false;
+        }
+
     }
 }
 

@@ -9,7 +9,7 @@ namespace MeshFunctions
 
         public Vector2 VMinMax => new Vector2(0, Mathf.PI);
 
-        public Vector2Int Subdivisions => new Vector2Int(32, 32);
+        public Vector2Int Subdivisions => new Vector2Int(120, 120);
 
         public string Name => "Sphere";
 
@@ -23,22 +23,6 @@ namespace MeshFunctions
         }
     }
 
-    public class TubeFunction : IMeshFunction
-    {
-        public Vector2 UMinMax => new Vector2(-Mathf.PI, Mathf.PI);
-
-        public Vector2 VMinMax => new Vector2(-Mathf.PI, Mathf.PI);
-
-        public Vector2Int Subdivisions => new Vector2Int(16, 16);
-
-        public string Name => "Tube";
-
-        public Vector3 Vertex(float u, float v)
-        {
-            return new Vector3(u, Cos(v), Sin(v));
-        }
-    }
-
     // https://www.youtube.com/watch?v=345SnWfahhY
     public class TorusMeshFunction : IMeshFunction
     {
@@ -46,7 +30,7 @@ namespace MeshFunctions
 
         public Vector2 VMinMax => new Vector2(0, 2 * PI);
 
-        public Vector2Int Subdivisions => new Vector2Int(16, 16);
+        public Vector2Int Subdivisions => new Vector2Int(120, 120);
 
         public string Name => "Torus";
 
@@ -68,7 +52,7 @@ namespace MeshFunctions
 
         public Vector2 VMinMax => new Vector2(0, 2 * PI);
 
-        public Vector2Int Subdivisions => new Vector2Int(16 , 16);
+        public Vector2Int Subdivisions => new Vector2Int(120 , 120);
 
         public string Name => "Sine Surface";
 
@@ -91,7 +75,7 @@ namespace MeshFunctions
 
         public Vector2 VMinMax => new Vector2(0,2*PI);
 
-        public Vector2Int Subdivisions => new Vector2Int(32, 32);
+        public Vector2Int Subdivisions => new Vector2Int(120, 120);
 
         public string Name => "Mesh";
 
@@ -99,31 +83,31 @@ namespace MeshFunctions
         {
             Vector3 result = new Vector3();
             result.x = v * Cos(u);
-            result.y = Sin(20 * v) * Cos(20 * v);
+            result.y = Sin(10 * v) * Cos(10 * v);
             result.z = v * Sin(u);
             return result;
         }
     }
 
-/*    // Plane on the x/z plane
-    public class PlaneMeshFunction : IMeshFunction
+    // https://mathworld.wolfram.com/BoySurface.html
+    public class BoySurfaceMeshFunction : IMeshFunction
     {
-        public Vector2 UMinMax => new Vector2(0, 1);
+        public Vector2 UMinMax => new Vector2(-PI / 2, PI / 2);
 
-        public Vector2 VMinMax => new Vector2(0, 1);
+        public Vector2 VMinMax => new Vector2(0, PI);
 
-        public Vector2Int Subdivisions => new Vector2Int(16, 16);
+        public Vector2Int Subdivisions => new Vector2Int(120, 120);
 
-        public string Name => "Plane";
+        public string Name => "Boy Surface";
 
         public Vector3 Vertex(float u, float v)
         {
             Vector3 result = new Vector3();
-            result.x = u;
-            result.y = 0;
-            result.z = v;
+            result.x = (Sqrt(2) * Pow(Cos(v), 2) * Cos(2 * u) + Cos(u) * Sin(2 * v)) / (2 - Sqrt(2) * Sin(3 * u) * Sin(2 * v)); 
+            result.y = (Sqrt(2) * Pow(Cos(v), 2) * Sin(2 * u) - Sin(u) * Sin(2 * v)) / (2 - Sqrt(2) * Sin(3 * u) * Sin(2 * v));
+            result.z = (3 * Pow(Cos(v), 2)) / (2 - Sqrt(2) * Sin(3 * u) * Sin(2 * v));
             return result;
         }
-    }*/
+    }
 
 }
