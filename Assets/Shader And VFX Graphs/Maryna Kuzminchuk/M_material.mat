@@ -58,7 +58,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Amount: 2.34
+    - Amount: 3.77
     - Edge: 3.37
     - Size: 1.47
     - _AddPrecomputedVelocity: 0
