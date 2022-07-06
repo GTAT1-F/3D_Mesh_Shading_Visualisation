@@ -30,7 +30,7 @@ namespace MeshFunctions
 
         public Vector2 VMinMax => new Vector2(0, 2 * PI);
 
-        public Vector2Int Subdivisions => new Vector2Int(120, 120);
+        public Vector2Int Subdivisions => new Vector2Int(10, 10);
 
         public string Name => "Torus";
 

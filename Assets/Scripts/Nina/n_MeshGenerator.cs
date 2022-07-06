@@ -86,7 +86,7 @@ public class n_MeshGenerator : MonoBehaviour
         generatedMesh.RecalculateTangents();
         GetComponent<MeshFilter>().mesh = generatedMesh;
 
-        if (meshFunction.Name != "Mesh")
+        if (meshFunction.Name == "Torus")
         {
             var meshCollider = gameObject.AddComponent<MeshCollider>();
             meshCollider.sharedMesh = generatedMesh;
